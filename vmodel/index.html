@@ -5,13 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
   <link rel="stylesheet" href="css/style.css">
 
   <title>Document</title>
 </head>
 
 <body>
-
+  <!-- questo elemento non e raggiunto da vue -->
+  <h1>Hello</h1>
+  <!-- elemento radice dove guarda vue -->
+  <div id="pippo">
+    <!-- vmodel guarda in automatico in data e cerca una proprieta che si chiama come il nostro valore -->
+    <h2 class="title" v-bind:class="classList">{{ message }}</h2>
+    <p :class="classList">{{ description }}</p>
+    <div>
+      <input type="text" value="Ciao Fulvio">
+      <input v-model="message" v-bind:placeholder="placeHolderMessage">
+      <input v-model="name">
+    </div>
+    <!-- <input v-model="pippo"> -->
+  </div>
   <script src="js/script.js"></script>
 </body>
 
